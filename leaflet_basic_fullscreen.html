@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Full Screen Leaflet Map</title>
+    <meta charset="utf-8" />
+
+    <!-- include leaflet css  -->
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css"/>
+    <!-- include leaflet js  -->
+    <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
+    
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="map"></div>
+
+
+    <script>
+
+    	// baseado neste exemplo
+    	// http://bl.ocks.org/d3noob/7654694
+        
+        // cria o objeto e centraliza o mapa na lat lon e zoom (duas opções)
+        // var map = L.map('map').setView([-23.572248, -46.608124], 10);
+        var map = L.map('map', {
+        	center: [-23.58, -46.55],
+        	zoom: 10
+        });
+        
+        // informações de créditos no rodapé
+        mapLink = '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        
+        // adicionar layer contendo imagem
+        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; ' + mapLink + ' Contributors',
+            maxZoom: 20,
+        }).addTo(map);
+
+    </script>
+</body>
+</html>
