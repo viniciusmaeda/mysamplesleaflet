@@ -1,2 +1,2 @@
 # Leaflet - Basic Full Screem Sample
-Samples codes of Leaflet.js
+Basic sample of code for Leaflet.js with full screem.
